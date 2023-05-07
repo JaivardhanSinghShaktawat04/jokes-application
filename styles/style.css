@@ -42,6 +42,8 @@ body{
 
 .jokes-section .jokes-content{
     /* border : 2px solid black ;  */
+    text-align: center;
+    padding : 1rem ; 
     width : 100% ; 
     flex-grow:1;
     display : flex ; 
@@ -52,6 +54,9 @@ body{
 
 .jokes-content p{
     font-size : 1.5rem ; 
+    letter-spacing:1px;
+    word-spacing:2px;
+    line-height:1.2;
     font-style: inherit;
     text-shadow: 0px 2px 10px gray;
 }
