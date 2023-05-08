@@ -32,12 +32,15 @@ const toggleModalWindow = () => {
   modalWindowElm.classList.toggle('hidden');
 }
 
+const checkEvent = event => {
+  const isPresent = ['btn-about_creator' , 'overlay' , 'close-modal'].some(el => event.target.classList.contains(el)); 
+  isPresent ? toggleModalWindow() : event.target.classList.contains('btn-next_joke') ? showNextJoke() : '' ; 
+}
+
 const initApplication = () => showNextJoke();
 
 initApplication();
 
 
-btnAboutCreator.addEventListener('click' , toggleModalWindow);
-overlay.addEventListener('click' , toggleModalWindow);
-btnCloseModal.addEventListener('click' , toggleModalWindow);
-btnNextJoke.addEventListener('click' , showNextJoke);
+// Single Event Listener : Using Event Delegation.
+document.addEventListener('click' , checkEvent);
